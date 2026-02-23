@@ -4,6 +4,8 @@ services:
   db:
     image: postgres:15
     container_name: superset_db
+    networks:
+      - superset_pilot_net
     restart: always
     environment:
       POSTGRES_USER: superset_user
@@ -17,6 +19,8 @@ services:
   superset:
     build: .
     container_name: superset_app
+    networks:
+      - superset_pilot_net
     restart: always
     ports:
       - "8088:8088"
@@ -27,3 +31,7 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  superset_pilot_net:
+    driver: bridge

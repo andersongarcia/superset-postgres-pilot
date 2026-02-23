@@ -56,9 +56,9 @@ python gerar_dados.py
 
     | Campo no Formulário | Valor para preencher |
     | :--- | :--- |
-    | **HOST** | `db` |
+    | **HOST** | `superset_db` |
     | **PORT** | `5432` |
-    | **DATABASE NAME** | `pilot_db` |
+    | **DATABASE NAME** | `generic_pilot_db` |
     | **USERNAME** | `superset_user` |
     | **PASSWORD** | `superset_password` |
     | **DISPLAY NAME** | `Piloto PostgreSQL` (Pode manter o padrão se preferir) |
