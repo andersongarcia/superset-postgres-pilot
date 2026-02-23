@@ -52,15 +52,20 @@ python gerar_dados.py
 2. No menu superior direito, vá em **Settings** (ícone de engrenagem) > **Database Connections**.
 3. Clique no botão azul **+ Database**.
 4. Selecione **PostgreSQL** na lista de bancos suportados.
-5. No campo **SQLAlchemy URI**, utilize a string de conexão abaixo:
+5. No formulário que abrir, preencha os campos exatamente assim:
 
-    ```text
-    postgresql://superset_user:superset_password@db:5432/pilot_db
-    ```
+    | Campo no Formulário | Valor para preencher |
+    | :--- | :--- |
+    | **HOST** | `db` |
+    | **PORT** | `5432` |
+    | **DATABASE NAME** | `pilot_db` |
+    | **USERNAME** | `superset_user` |
+    | **PASSWORD** | `superset_password` |
+    | **DISPLAY NAME** | `Piloto PostgreSQL` (Pode manter o padrão se preferir) |
 
-    * **Importante:** Note o uso do nome `db`. Como o Superset está rodando dentro de um container, ele utiliza o nome do serviço definido no `docker-compose` para localizar o banco de dados na rede interna do Docker.
+    > **💡 Dica:** O campo **HOST** deve ser preenchido com `db` porque, dentro da rede do Docker, os containers se comunicam pelo nome do serviço definido no arquivo `docker-compose.yml`.
 
-6. Clique em **Test Connection**. Ao receber a mensagem de sucesso, clique em **Connect** ou **Finish**.
+6. Clique em **Test Connection**. Ao receber a mensagem de sucesso, clique em **Connect**.
 
 ## 📂 Estrutura de Arquivos
 
