@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: superset_db
+    restart: always
+    environment:
+      POSTGRES_USER: superset_user
+      POSTGRES_PASSWORD: superset_password
+      POSTGRES_DB: generic_pilot_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  superset:
+    build: .
+    container_name: superset_app
+    restart: always
+    ports:
+      - "8088:8088"
+    environment:
+      - SUPERSET_SECRET_KEY=pilot_test_secret_key_12345
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
