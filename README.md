@@ -1,4 +1,4 @@
-# 🚀 Superset + PostgreSQL Pilot Starter Kit
+# Superset + PostgreSQL Pilot Starter Kit
 
 Este repositório fornece uma infraestrutura agnóstica e pronta para uso do **Apache Superset** conectado a um banco de dados **PostgreSQL** via Docker. Ideal para exploração de funcionalidades, prototipagem de dashboards e testes de performance.
 
